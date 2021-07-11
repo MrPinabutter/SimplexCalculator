@@ -1,4 +1,4 @@
 Execução:
 <code>
-  python simplex.py < entrada.txt
+  python simplex.py
 </code>
