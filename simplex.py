@@ -183,7 +183,7 @@ def simplex(tableau, tipo):
     while True:
         baseEntra = novaBase(tableau, tipo)
         if baseEntra == None:
-            print('Solução ótima: Z = ' + str(tableau[-1][-1] * -1))
+            print('Solução ótima: Z = ' + '{:.2f}'.format(tableau[-1][-1] * -1))
             return
         baseSai = testeDaRazao(tableau, baseEntra)
         if baseSai == None:
@@ -238,7 +238,7 @@ def printTableau(tableau, tipo, bases):
             aux = len('{:.2f}'.format(tableau[l][n]))
             print('  | ', end ='')
             if l == len(tableau)-1 and n == len(tableau[0])-1 and tableau[-1][-1]==0: print(('  '*(maiores[n]-aux))+'Z', end='')
-            elif l == len(tableau)-1 and n == len(tableau[0])-1 and tableau[-1][-1]>0: print(('  '*(maiores[n]-aux))+'Z+'+str(tableau[-1][-1]), end='')
+            elif l == len(tableau)-1 and n == len(tableau[0])-1 and tableau[-1][-1]>0: print(('  '*(maiores[n]-aux))+'Z+'+'{:.2f}'.format(tableau[-1][-1]), end='')
             elif l == len(tableau)-1 and n == len(tableau[0])-1: print((' '*(maiores[n]-aux))+' Z'+'{:.2f}'.format(tableau[-1][-1]), end='')
             else: print((' '*(maiores[n]-aux))+'{:.2f}'.format(tableau[l][n]), end='')
         print()
