@@ -105,7 +105,7 @@ def geraMatrizInicial(objetivo, padrao):
 
                 val = linha[i].split('x')
                 if val[0] != '':
-                    matriz[linhas][int(val[1]) - 1] = -int(val[0])
+                    matriz[linhas][int(val[1]) - 1] = -float(val[0])
                 else:
                     matriz[linhas][int(val[1]) - 1] = -1
             elif linha[i] == '+' or (i == 0 and linha[i][0] != '-'):
@@ -113,12 +113,12 @@ def geraMatrizInicial(objetivo, padrao):
                     i += 1
                 val = linha[i].split('x')
                 if val[0] != '':
-                    matriz[linhas][int(val[1]) - 1] = int(val[0])
+                    matriz[linhas][int(val[1]) - 1] = float(val[0])
                 else:
                     matriz[linhas][int(val[1]) - 1] = 1
             else:
                 i += 1
-                matriz[linhas][-1] = int(linha[i][ :len(linha[i]) - 1]) 
+                matriz[linhas][-1] = float(linha[i][ :len(linha[i]) - 1]) 
             i += 1
         linhas += 1
 
@@ -132,7 +132,7 @@ def geraMatrizInicial(objetivo, padrao):
             i += 1
             val = var[i].split('x')
             if val[0] != '':
-                matriz[linhas][int(val[1]) - 1] = -int(val[0])
+                matriz[linhas][int(val[1]) - 1] = -float(val[0])
             else:
                 matriz[linhas][int(val[1]) - 1] = -1
         elif var[i] == '+' or i == 0:
@@ -140,11 +140,11 @@ def geraMatrizInicial(objetivo, padrao):
                 i += 1
             val = var[i].split('x')
             if val[0] != '':
-                matriz[linhas][int(val[1]) - 1] = int(val[0])
+                matriz[linhas][int(val[1]) - 1] = float(val[0])
             else:
                 matriz[linhas][int(val[1]) - 1] = 1
         else:
-            matriz[linhas][len(matriz[0]) - 1] = int(linha[i][ :len(linha[i]) - 1]) 
+            matriz[linhas][len(matriz[0]) - 1] = float(linha[i][ :len(linha[i]) - 1]) 
         i += 1
     matriz[-1][-1] = tipo
     return matriz
